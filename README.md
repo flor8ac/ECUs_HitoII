@@ -35,3 +35,7 @@ Responsabilidad del Gateway:
     - Validar cada señal.
     - Determinar si cada señal es válida o inválida.
     - Mantener el último valor recibido.
+
+How to compile:
+g++ -Wall -Wextra -pedantic -std=c++17 main.cpp src/*.cpp -Iinclude -o ecu_sim
+./ecu_sim
