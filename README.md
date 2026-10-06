@@ -1,13 +1,13 @@
 # ECUs_HitoII
-Proyecto entregable para Hito II de C++ Automotriz
+Automotive C++ course
 
-Objetivo del proyecto:
-    Simulación de Gateway ECU y Control ECU.
+Goal of the project:
+    Simulation of the Gateway ECU and Control ECU.
 
-Arquitectura:
-    Simulador -> Gateway -> Control -> Dashboard
+Arquitecture:
+    Simulator -> Gateway -> Control -> Dashboard
 
-    Estados:
+    Machine States:
             - INIT
             - SELF_TEST
             - OPERATIONAL
@@ -16,25 +16,23 @@ Arquitectura:
             - SHUTDOWN
 
 
-Señales utilizadas:
-    - Velocidad
+Vehicle Signals:
+    - Velocity
     - RPM
-    - Temperatura
-    - Voltaje Bateria
-    - Presion de Aceite
+    - Temperature
+    - Battery Voltage
+    - Oil Pressure
 
-Rangos utilizados:
-    - Velocidad: 0 a 220 Km/H
-    - RPM: 0 a 8000 rpm
-    - Temperatura: -20 a 130 grados centigrados
-    - Voltaje de la Bateria: 10 a 15.5 Volts 
-    - Presion de Aceite: 0.5 a 6 bar
+Ranges:
+    - Velocity: 0 to 220 Km/H
+    - RPM: 0 to 8000 rpm
+    - Temperature: -20 to 130 centigrades
+    - Battery Voltage: 10 to 15.5 Volts 
+    - Oil Pressure: 0.5 a 6 bar
 
-Responsabilidad del Gateway:
-    - Recibir las señales simuladas.
-    - Validar cada señal.
-    - Determinar si cada señal es válida o inválida.
-    - Mantener el último valor recibido.
+Gateway Funcionality:
+    - Validate each signal.
+    - Hold last value.
 
 How to compile:
 g++ -Wall -Wextra -pedantic -std=c++17 main.cpp src/*.cpp -Iinclude -o ecu_sim

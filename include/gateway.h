@@ -1,11 +1,11 @@
 #pragma once
 
-bool validarVelocidad(double velocidad);
+bool validate_velocity(double velocidad);
 
-bool validarRPM(int rpm);
+bool validate_rpm(int rpm);
 
-bool validarTemperatura(double temperatura);
+bool validate_temperature(double temperatura);
 
-bool validarVoltaje(double voltaje);
+bool validate_voltage(double voltaje);
 
-bool validarPresion(double presion);
+bool validate_pressure(double presion);
