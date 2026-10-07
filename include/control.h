@@ -2,6 +2,7 @@
 
 #include <string>
 #include "sensor.h"
+#include "gateway.h"
 
 enum class ECUstate{
     INIT,

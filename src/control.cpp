@@ -1,8 +1,7 @@
 #include <chrono>
 #include <thread>
 #include "control.h"
-#include "sensor.h"
-#include "gateway.h"
+
 
 std::string ecu_state_text(ECUstate ecu_state){
     switch(ecu_state){

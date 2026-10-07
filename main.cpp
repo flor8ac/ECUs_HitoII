@@ -6,7 +6,6 @@
 #include "include/dashboard.h"
 #include "include/gateway.h"
 
-
 int main(){
 
     /* Car engine ignition ON initial values */
@@ -14,6 +13,7 @@ int main(){
     ECUstate estado = ECUstate::INIT;
     Vehicle_signals mycar = initial_signals();
     show_dashboard(mycar, estado, cycle);
+    
     /* INIT -> SELF_TEST -> OPERATIONAL */
     for(cycle=1;cycle<2;cycle++){
         estado = control_ecu(estado, mycar,cycle);
@@ -23,6 +23,7 @@ int main(){
     while (cycle < 10){
 
         /* Simulator data entry */
+        mycar = update_simulation_values(mycar);
 
         /* Gateway validation */
         mycar.velocity.status = validate_velocity(mycar.velocity.current_value);
