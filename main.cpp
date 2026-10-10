@@ -14,16 +14,23 @@ int main(){
     Vehicle_signals mycar = initial_signals();
     show_dashboard(mycar, estado, cycle);
     
-    /* INIT -> SELF_TEST -> OPERATIONAL */
+    /*            Initial Processes
+        INIT -> SELF_TEST -> OPERATIONAL */
     for(cycle=1;cycle<2;cycle++){
+        mycar.velocity.update_cycle = 1;
+        mycar.rpm.update_cycle = 1;
+        mycar.temperature.update_cycle = 1;
+        mycar.voltage.update_cycle = 1;
+        mycar.pressure.update_cycle = 1;
         estado = control_ecu(estado, mycar,cycle);
         show_dashboard(mycar, estado, cycle);
     }
 
-    while (cycle < 10){
+    /* Main Loop */
+    while (estado != ECUstate::SHUTDOWN){
 
         /* Simulator data entry */
-        mycar = update_simulation_values(mycar);
+        mycar = update_simulation_values(mycar, cycle);
 
         /* Gateway validation */
         mycar.velocity.status = validate_velocity(mycar.velocity.current_value);

@@ -22,8 +22,9 @@ std::string ecu_state_text(ECUstate ecu_state){
 
         case ECUstate::SHUTDOWN:
             return "SHUTDOWN";
+ 
     }
-    return "DESCONOCIDO";
+    return "UNKNOWN";
 }
 
 ECUstate control_ecu(ECUstate ecu_state, Vehicle_signals& data, int cycle){
